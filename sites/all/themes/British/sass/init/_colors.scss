@@ -15,7 +15,7 @@
 $chroma: define-default-color-scheme('branding', 'The site\'s main colors. Can be used to define colors in other color schemes.');
 
 $chroma: add-colors((
-  black:                  #000,
+  black:                  #1C2A4B,
   grey-dark:              ('black' lighten 40%), // #666
   'grey':                 ('black' lighten 60%), // #999
   grey-light:             ('black' lighten 80%), // #ccc
@@ -34,8 +34,8 @@ $chroma: add-colors('functional', (
   text:                   'black',
   text-bg:                'white',
 
-  link:                   'blue',
-  link-visited:           ('blue' darken 20%),
+  link:                   'black',
+  link-visited:           'black',
   link-active:            'red',
 
   border:                 'grey-light',

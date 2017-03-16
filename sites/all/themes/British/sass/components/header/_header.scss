@@ -1,76 +1,72 @@
-// Dependencies.
-@import 'base/headings/headings';
-@import 'components/clearfix/clearfix';
+.header {
+    padding: 20px;
+    background: #FFF;
+    width: 100%;
+    line-height: 0;
 
-// Branding header
-//
-// Markup: header.twig
-//
-// Style guide: components.header
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
 
-.header,
-%header {
-  @extend %clearfix;
+        .header__region {
+            display: inline;
+        }
 
-  // Wrapping link for logo.
-  &__logo {
-    float: left;
-    margin: 0 10px 0 0;
-    padding: 0;
+        .header__logo img {
+            height: 68px;
+        }
 
-    @include rtl() {
-      float: right;
-      margin: 0 0 0 10px;
+        #block-system-main-menu {
+            float: right;
+            margin: 10px 0 0;
+            padding: 0;
+
+            .menu {
+                padding: 0;
+                margin: 0;
+            }
+
+            li {
+                list-style: none;
+                display: inline-block;
+                padding: 5px 15px;
+                float: left;
+                line-height: 1.5;
+                margin: 0;
+
+                a {
+                    display: block;
+                    width: 100%;
+                    padding: 5px 0;
+                    font-family: $Lato;
+                    text-decoration: none;
+                    position: relative;
+                }
+
+                a:before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    border: 0;
+                    height: 2px;
+                    width: 0;
+                    transition: width 0.2s ease-out;
+                    background-color: #E24242;
+                }
+
+                a:hover:before {
+                    width: 100%;
+                }
+            }
+        }
     }
-  }
+}
 
-  // Logo image.
-  &__logo-image {
-    vertical-align: bottom;
-  }
 
-  // Wrapper for website name and slogan.
-  &__name-and-slogan {
-    float: left;
-  }
+.not-front header {
+  background: black;
 
-  // The name of the website.
-  &__site-name {
-    @extend %h1;
-    margin: 0;
-  }
-
-  // The link around the name of the website.
-  &__site-link {
-    &:link,
-    &:visited {
-      color: color(text);
-      text-decoration: none;
-    }
-
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
-  }
-
-  // The slogan (or tagline) of a website.
-  &__site-slogan {
-    margin: 0;
-  }
-
-  // The secondary menu (login, etc.)
-  &__secondary-menu {
-    float: right;
-
-    @include rtl() {
-      float: left;
-    }
-  }
-
-  // Wrapper for any blocks placed in the header region.
-  &__region {
-    // Clear the logo.
-    clear: both;
+  .container #block-system-main-menu li a {
+    color: #FFF;
   }
 }

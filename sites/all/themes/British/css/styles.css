@@ -1,4 +1,5 @@
 /*! typey | GPLv2 License | https://github.com/jptaranto/typey */
+@import url("https://fonts.googleapis.com/css?family=Lato");
 * {
   box-sizing: border-box;
 }
@@ -21,7 +22,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  color: #000;
+  color: #1C2A4B;
   background-color: #fff;
 }
 
@@ -62,12 +63,12 @@ template,
 }
 
 a {
-  color: #0072b9;
+  color: #1C2A4B;
   -webkit-text-decoration-skip: objects;
 }
 
 :visited {
-  color: #003353;
+  color: #1C2A4B;
 }
 
 a:active {
@@ -100,8 +101,7 @@ a:hover {
   }
 }
 
-h1,
-.header__site-name {
+h1 {
   font-size: 2rem;
   line-height: 3rem;
   margin-top: 1.5rem;
@@ -180,7 +180,7 @@ dfn {
 
 mark {
   background-color: #fd0;
-  color: #000;
+  color: #1C2A4B;
 }
 
 small {
@@ -207,7 +207,7 @@ sup {
 hr {
   margin: 1.5rem 0;
   border: 0;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid white;
 }
 
 .divider > :first-child, hr > :first-child {
@@ -348,7 +348,7 @@ button,
   line-height: inherit;
   text-decoration: none;
   cursor: pointer;
-  color: #000;
+  color: #1C2A4B;
 }
 
 .button::-moz-focus-inner,
@@ -382,7 +382,7 @@ button:active,
 [type='submit']:focus,
 [type='submit']:active {
   text-decoration: none;
-  color: #000;
+  color: #1C2A4B;
 }
 
 [disabled].button,
@@ -391,7 +391,7 @@ button[disabled],
 [disabled][type='reset'],
 [disabled][type='submit'] {
   cursor: default;
-  color: #999999;
+  color: #b5c3e4;
 }
 
 [disabled].button:hover,
@@ -407,7 +407,7 @@ button[disabled]:active,
 [disabled][type='button']:active,
 [disabled][type='reset']:active,
 [disabled][type='submit']:active {
-  color: #999999;
+  color: #b5c3e4;
 }
 
 [type='checkbox'],
@@ -418,7 +418,7 @@ button[disabled]:active,
 
 fieldset {
   padding: 0.525rem 0.9375rem 0.975rem;
-  border: 1px solid #cccccc;
+  border: 1px solid white;
   margin: 0 2px;
 }
 
@@ -687,21 +687,8 @@ th {
 }
 
 .layout-center {
-  padding-left: 20px;
-  padding-right: 20px;
   margin: 0 auto;
-  max-width: 1165px;
-}
-
-@media (min-width: 777px) {
-  .layout-center {
-    padding-left: 12px;
-    padding-right: 13px;
-  }
-  [dir="rtl"] .layout-center {
-    padding-left: 13px;
-    padding-right: 12px;
-  }
+  max-width: 1200px;
 }
 
 .layout-center--shared-grid,
@@ -731,7 +718,7 @@ th {
 
 .box {
   margin-bottom: 1.5rem;
-  border: 5px solid #cccccc;
+  border: 5px solid white;
   padding: 1em;
 }
 
@@ -740,22 +727,20 @@ th {
 }
 
 .box:focus, .box:hover, .box.is-focus, .box--is-focus {
-  border-color: #000;
+  border-color: #1C2A4B;
 }
 
 .box--highlight {
-  border-color: #0072b9;
+  border-color: #1C2A4B;
 }
 
 .clearfix:before,
-.header:before,
 .tabs:before {
   content: '';
   display: table;
 }
 
 .clearfix:after,
-.header:after,
 .tabs:after {
   content: '';
   display: table;
@@ -792,52 +777,77 @@ th {
   margin-right: 32px;
 }
 
-.header__logo {
-  float: left;
-  margin: 0 10px 0 0;
+.header {
+  padding: 20px;
+  background: #FFF;
+  width: 100%;
+  line-height: 0;
+}
+
+.header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header .container .header__region {
+  display: inline;
+}
+
+.header .container .header__logo img {
+  height: 68px;
+}
+
+.header .container #block-system-main-menu {
+  float: right;
+  margin: 10px 0 0;
   padding: 0;
 }
 
-[dir="rtl"] .header__logo {
-  float: right;
-  margin: 0 0 0 10px;
-}
-
-.header__logo-image {
-  vertical-align: bottom;
-}
-
-.header__name-and-slogan {
-  float: left;
-}
-
-.header__site-name {
+.header .container #block-system-main-menu .menu {
+  padding: 0;
   margin: 0;
 }
 
-.header__site-link:link, .header__site-link:visited {
-  color: #000;
+.header .container #block-system-main-menu li {
+  list-style: none;
+  display: inline-block;
+  padding: 5px 15px;
+  float: left;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.header .container #block-system-main-menu li a {
+  display: block;
+  width: 100%;
+  padding: 5px 0;
+  font-family: "Lato", sans-serif;
   text-decoration: none;
+  position: relative;
 }
 
-.header__site-link:hover, .header__site-link:focus {
-  text-decoration: underline;
+.header .container #block-system-main-menu li a:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  border: 0;
+  height: 2px;
+  width: 0;
+  -webkit-transition: width 0.2s ease-out;
+  transition: width 0.2s ease-out;
+  background-color: #E24242;
 }
 
-.header__site-slogan {
-  margin: 0;
+.header .container #block-system-main-menu li a:hover:before {
+  width: 100%;
 }
 
-.header__secondary-menu {
-  float: right;
+.not-front header {
+  background: black;
 }
 
-[dir="rtl"] .header__secondary-menu {
-  float: left;
-}
-
-.header__region {
-  clear: both;
+.not-front header .container #block-system-main-menu li a {
+  color: #FFF;
 }
 
 .hidden,
@@ -941,7 +951,7 @@ span.field-label {
 .messages__highlight,
 .messages--error .error,
 .messages.error .error {
-  color: #000;
+  color: #1C2A4B;
 }
 
 .messages__list {
@@ -966,7 +976,7 @@ span.field-label {
 .messages.warning,
 .warning {
   background-color: #fffce6;
-  color: #000;
+  color: #1C2A4B;
 }
 
 .messages--error-color,
@@ -1065,7 +1075,7 @@ span.field-label {
   height: 0;
   overflow: visible;
   background-color: transparent;
-  color: #eeeeee;
+  color: white;
   font-size: 75px;
   line-height: 1;
   text-align: center;
@@ -1144,7 +1154,7 @@ span.field-label {
 
 .nav-menu__link.is-active, .nav-menu__link--is-active,
 .menu a.active {
-  color: #000;
+  color: #1C2A4B;
 }
 
 .navbar,
@@ -1220,7 +1230,7 @@ span.field-label {
 }
 
 .skip-link:link, .skip-link:visited {
-  background-color: #666666;
+  background-color: #6b87c8;
   color: #fff;
 }
 
@@ -1237,9 +1247,9 @@ span.field-label {
 .tabs {
   margin: 1.125rem 0 0;
   line-height: 1.875rem;
-  border-bottom: 1px solid #cccccc \0/ie;
-  background-image: -webkit-linear-gradient(bottom, #cccccc 1px, transparent 1px);
-  background-image: linear-gradient(to top, #cccccc 1px, transparent 1px);
+  border-bottom: 1px solid white \0/ie;
+  background-image: -webkit-linear-gradient(bottom, white 1px, transparent 1px);
+  background-image: linear-gradient(to top, white 1px, transparent 1px);
   padding: 0 2px;
   list-style: none;
   white-space: nowrap;
@@ -1254,13 +1264,13 @@ span.field-label {
 .tabs__tab {
   float: left;
   margin: 0 3px;
-  border: 1px solid #cccccc;
+  border: 1px solid white;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   border-bottom-color: transparent;
   border-bottom: 0 \0/ie;
   overflow: hidden;
-  background: #dddddd;
+  background: white;
 }
 
 [dir="rtl"] .tabs__tab {
@@ -1278,13 +1288,13 @@ span.field-label {
   -webkit-transition: color .3s, background .3s, border .3s;
   transition: color .3s, background .3s, border .3s;
   text-shadow: #fff 0 1px 0;
-  color: #000;
-  background: #dddddd;
+  color: #1C2A4B;
+  background: white;
   letter-spacing: 1px;
 }
 
 .tabs__tab-link:focus, .tabs__tab-link:hover {
-  background: #eaeaea;
+  background: white;
 }
 
 .tabs__tab-link:active, .tabs__tab-link.is-active, .tabs__tab-link--is-active {
@@ -1308,8 +1318,8 @@ span.field-label {
 
 .tabs + .tabs--secondary {
   margin-top: 0;
-  background-image: -webkit-linear-gradient(bottom, #cccccc 1px, transparent 1px);
-  background-image: linear-gradient(to top, #cccccc 1px, transparent 1px);
+  background-image: -webkit-linear-gradient(bottom, white 1px, transparent 1px);
+  background-image: linear-gradient(to top, white 1px, transparent 1px);
 }
 
 .tabs--secondary .tabs__tab {
@@ -1327,24 +1337,24 @@ span.field-label {
 }
 
 .tabs--secondary .tabs__tab-link {
-  border: 1px solid #cccccc;
+  border: 1px solid white;
   border-radius: 24px;
-  color: #666666;
-  background: #f1f1f1;
+  color: #6b87c8;
+  background: white;
   letter-spacing: normal;
 }
 
 .tabs--secondary .tabs__tab-link:focus, .tabs--secondary .tabs__tab-link:hover {
-  color: #333333;
-  background: #dddddd;
-  border-color: #999999;
+  color: #385495;
+  background: white;
+  border-color: #bbbbbb;
 }
 
 .tabs--secondary .tabs__tab-link:active, .tabs--secondary .tabs__tab-link.is-active, .tabs--secondary .tabs__tab-link--is-active {
   color: white;
-  text-shadow: #333333 0 1px 0;
-  background: #666666;
-  border-color: black;
+  text-shadow: #385495 0 1px 0;
+  background: #6b87c8;
+  border-color: #1c2a4b;
 }
 
 .autocomplete,
@@ -1378,7 +1388,7 @@ span.field-label {
 .autocomplete__list-item,
 #autocomplete li {
   background: #fff;
-  color: #000;
+  color: #1C2A4B;
   cursor: default;
   white-space: pre;
 }
@@ -1420,7 +1430,7 @@ span.field-label {
 
 .collapsible-fieldset__summary,
 .collapsible .fieldset-legend .summary {
-  color: #999999;
+  color: #b5c3e4;
   font-size: .9em;
   margin-left: .5em;
 }
@@ -1542,7 +1552,7 @@ label.option {
 .form-table__header,
 .form-table th,
 form table th {
-  border-bottom: 3px solid #cccccc;
+  border-bottom: 3px solid white;
   padding-right: 1em;
   text-align: left;
 }
@@ -1560,15 +1570,15 @@ form table [dir="rtl"] th {
 .form-table__body,
 .form-table tbody,
 form table tbody {
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid white;
 }
 
 .form-table__row,
 .form-table tbody tr,
 form table tbody tr {
   padding: .1em .6em;
-  border-bottom: 1px solid #cccccc;
-  background-color: #eeeeee;
+  border-bottom: 1px solid white;
+  background-color: white;
 }
 
 .form-table__row:nth-child(even),
@@ -1581,14 +1591,14 @@ form table tbody tr:nth-child(even) {
 .form-table tbody tr.is-active,
 form table tbody tr.is-active,
 td.active {
-  background-color: #dddddd;
+  background-color: #eeeeee;
 }
 
 .form-table__row.is-disabled, .form-table__row--is-disabled,
 .form-table tbody tr.is-disabled,
 form table tbody tr.is-disabled,
 td.menu-disabled {
-  background: #cccccc;
+  background: white;
 }
 
 .form-table__row.is-selected, .form-table__row--is-selected,
@@ -1623,8 +1633,8 @@ th .checkbox {
 .progress .bar {
   border-radius: 3px;
   margin: 0 .2em;
-  border: 1px solid #666666;
-  background-color: #cccccc;
+  border: 1px solid #6b87c8;
+  background-color: white;
 }
 
 .progress-bar__fill,
@@ -1699,8 +1709,8 @@ tr .ajax-progress .throbber {
 
 .resizable-textarea__grippie,
 .resizable-textarea .grippie {
-  background: url(../sass/forms/resizable-textarea/grippie.png) no-repeat center 2px #eeeeee;
-  border: 1px solid #cccccc;
+  background: url(../sass/forms/resizable-textarea/grippie.png) no-repeat center 2px white;
+  border: 1px solid white;
   border-top-width: 0;
   cursor: s-resize;
   height: 9px;
